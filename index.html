@@ -56,9 +56,58 @@
    <link rel="stylesheet" href="https://wedew.id/combine/d1e2e5151b3a3eb389233c317ee27b0c-1672855271.css">
 
 
+   <style>
+      
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:rgb(46, 46, 46);
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+   z-index: 99;
+}
+
+.my-float{
+	margin-top:22px;
+}
+   </style>
+
 </head>
 
 <body>
+   <a href="#" id="musicc" class="float">
+      <i class="fas fa-play my-float" id="play"></i>
+   </a>
+   <audio  controls hidden id="audio">
+      <source src="./music/Shane Filan  Beautiful In White .mp3" type="audio/mpeg" />
+   </audio>
+   <script>
+      $(function () {
+         var audio = $("#audio")[0];
+         var counter =1
+         $("#musicc").on("click", function() {
+            if(counter%2==0){
+               $("#play").removeClass('fas fa-pause my-float')
+               $("#play").addClass('fas fa-play my-float')
+               audio.pause();
+               counter++
+            }else{
+               $("#play").removeClass('fas fa-play my-float')
+               $("#play").addClass('fas fa-pause my-float')
+               audio.play();
+               counter++
+            }
+	      });
+
+      })
+   </script>
+
+
    <div class="website-blocks ">
       <!-- hero image -->
       <section id="block-wH2hW"
